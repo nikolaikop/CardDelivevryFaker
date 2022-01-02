@@ -1,10 +1,11 @@
 package rest;
 
 import com.codeborne.selenide.SelenideElement;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
+import lombok.val;
+import java.util.Random;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
@@ -21,8 +22,6 @@ public class CardDeliveryTest {
     void before() {
         open("http://localhost:9999");
     }
-
-
 
     @Test
     void ifDataIsGood() {

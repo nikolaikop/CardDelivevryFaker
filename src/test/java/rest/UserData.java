@@ -41,7 +41,7 @@ public class UserData {
 
     static String randomNamesForInput() {
         Random random = new Random();
-        int rand = random.nextInt(7);
+        int rand = random.nextInt(6);
         String[] randomNames = {"Иванов Петр", "Пирожков Артур", "Сидовор Иван", "Петров Сидор",
                 "Премудрая Василиса", "Печкин Почтальон"};
         return randomNames[rand];
