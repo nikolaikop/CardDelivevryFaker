@@ -16,7 +16,7 @@ public class UserData {
 
     static String randomCityForInput() {
         Random random = new Random();
-        int rand = random.nextInt(10);
+        int rand = random.nextInt(13);
         String[] city = {"Санкт-Петербург", "Москва", "Хабаровск", "Кемерово", "Майкоп", "Екатеринбург", "Черкесск",
                 "Симферополь", "смоленск", "Тамбов", "Астрахань", "Кострома", "Петрозаводск"};
         return city[rand];
