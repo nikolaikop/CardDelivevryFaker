@@ -17,9 +17,16 @@ public class UserData {
     static String randomCityForInput() {
         Random random = new Random();
         int rand = random.nextInt(10);
-        String[] city = {"Санкт-Петербург", "Москва", "Хабаровск", "Амурск", "Комсомольск-на-Амуре", "Советская Гавань", "Новосибирск",
-                "Челябинск", "Воркута", "Сыктывкар", "Пушкин", "Кронштадт", "Чебоксары"};
+        String[] city = {"Санкт-Петербург", "Москва", "Хабаровск", "Кемерово", "Майкоп", "Екатеринбург", "Черкесск",
+                "Симферополь", "смоленск", "Тамбов", "Астрахань", "Кострома", "Петрозаводск"};
         return city[rand];
+    }
+
+    static String badCities() {
+        Random random = new Random();
+        int rand = random.nextInt(7);
+        String cityNoVal[] = {"Советская-Гавань", "Пушкин", "Ванино", "Амурск", "Кингисепп", "Заринск", "Курганинск"};
+        return cityNoVal[rand];
     }
 
     static String phoneData() {
