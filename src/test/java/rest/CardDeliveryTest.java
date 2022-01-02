@@ -1,6 +1,7 @@
 package rest;
 
 import com.codeborne.selenide.SelenideElement;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
@@ -20,6 +21,8 @@ public class CardDeliveryTest {
     void before() {
         open("http://localhost:9999");
     }
+
+
 
     @Test
     void ifDataIsGood() {
