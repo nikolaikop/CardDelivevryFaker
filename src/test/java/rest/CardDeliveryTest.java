@@ -33,7 +33,7 @@ public class CardDeliveryTest {
 
     @BeforeEach
     void before() {
-        System.setProperty("webdriver.chrome.driver", "C:\\tmp\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         ChromeOptions opt = new ChromeOptions();
         opt.setBinary("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe");  //chrome binary location specified here
         opt.addArguments("start-maximized");
