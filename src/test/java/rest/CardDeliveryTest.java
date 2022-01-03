@@ -16,8 +16,6 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class CardDeliveryTest {
 
-    private WebDriver driver;
-
     @BeforeAll
     static void setUpAll() {
         WebDriverManager.chromedriver().setup();
@@ -35,17 +33,8 @@ public class CardDeliveryTest {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
-        driver = new ChromeDriver(options);
-        driver.get("http://localhost:9999");
         open("http://localhost:9999");
     }
-
-    @AfterEach
-    void tearDown() {
-        if (driver != null)
-            driver.quit();
-            driver = null;
-        }
 
     @Test
     void ifDataIsGood() {
