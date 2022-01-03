@@ -1,4 +1,4 @@
-package rest;
+package ru.netology.rest;
 
 import com.github.javafaker.Faker;
 
