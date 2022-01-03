@@ -34,13 +34,13 @@ public class CardDeliveryTest {
     @BeforeEach
     void before() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
-        ChromeOptions opt = new ChromeOptions();
+/*        ChromeOptions opt = new ChromeOptions();
         opt.setBinary("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe");  //chrome binary location specified here
         opt.addArguments("start-maximized");
         opt.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-        opt.setExperimentalOption("useAutomationExtension", false);
+        opt.setExperimentalOption("useAutomationExtension", false);*/
+        WebDriver driver = new ChromeDriver();
         Selenide.open("http://localhost:9999");
-        WebDriver driver = new ChromeDriver(opt);
         driver.get("http://localhost:9999");
         //open("http://localhost:9999");
     }
