@@ -4,6 +4,10 @@ import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.chromium.ChromiumOptions;
+
+import java.util.Collections;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
@@ -18,6 +22,14 @@ public class CardDeliveryTest {
 
     @BeforeEach
     void before() {
+        System.setProperty("webdriver.chrome.driver", "C:\\tmp\\chromedriver.exe");
+        ChromeOptions opt = new ChromeOptions();
+        opt.setBinary("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe");  //chrome binary location specified here
+        opt.addArguments("start-maximized");
+        opt.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+        opt.setExperimentalOption("useAutomationExtension", false);
+        //WebDriver driver = new ChromeDriver(opt);
+        //driver.get("https://www.google.com/");
         open("http://localhost:9999");
     }
 
