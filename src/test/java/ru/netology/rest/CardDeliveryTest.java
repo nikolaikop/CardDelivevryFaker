@@ -10,11 +10,6 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class CardDeliveryTest {
 
-/*    @BeforeAll
-    static void setUpAll() {
-        WebDriverManager.chromedriver().setup();
-    }*/
-
     void dataInput(int days) {
         SelenideElement data = $("[data-test-id=date]");
         data.$("[value]").doubleClick().sendKeys(Keys.BACK_SPACE);
@@ -23,10 +18,6 @@ public class CardDeliveryTest {
 
     @BeforeEach
     void before() {
-/*        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        Selenide.open("http://localhost:9999");
-        driver.get("http://localhost:9999");*/
         open("http://localhost:9999");
     }
 
