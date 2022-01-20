@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'io.qameta.allure' version '2.9.6'
 }
 
 group 'ru.netology'
@@ -12,17 +11,10 @@ sourceCompatibility = 11
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
 
-allure {
-    autoconfigure = true
-    version = '2.17.2' // Latest Allure Version
-    useJUnit5 {
-        version = '2.17.2' // Latest Allure Version
-    }
-}
-
 repositories {
     jcenter()
     mavenCentral()
+    maven { url "http://dl.bintray.com/epam/reportportal/" }
 }
 
 dependencies {
@@ -30,10 +22,20 @@ dependencies {
     testImplementation 'com.codeborne:selenide:6.1.2'
     testImplementation 'org.slf4j:slf4j-simple:1.7.32'
     testImplementation 'com.github.javafaker:javafaker:1.0.2'
-    testImplementation 'io.qameta.allure:allure-selenide:2.17.2'
+    implementation 'com.epam.reportportal:agent-java-junit5:5.1.0'
+    implementation 'com.epam.reportportal:logger-java-logback:5.1.0'
+    implementation 'ch.qos.logback:logback-classic:1.2.10'
+    implementation 'com.epam.reportportal:logger-java-log4j:5.1.3'
+    compileOnly 'log4j:log4j:1.2.17'
+    implementation 'org.apache.logging.log4j:log4j-api:2.17.0'
+    implementation 'org.apache.logging.log4j:log4j-core:2.17.0'
+
 }
 
 test {
+    testLogging.showStandardStreams = true
     useJUnitPlatform()
     systemProperty 'selenide.headless', System.getProperty('selenide.headless')
+    systemProperty 'selenide.browser', 'chrome'
+    systemProperty 'junit.jupiter.extensions.autodetection.enabled', true
 }
